@@ -1,0 +1,16 @@
+---
+title: "GVSU CIS 331 - Data analysis tools and techniques (Winter 2023)"
+author: "Instructor: Dr. Alexander Lalejini"
+date: "`r Sys.Date()`"
+output: bookdown::gitbook
+documentclass: book
+bibliography: ["book.bib", "packages.bib"]
+biblio-style: apalike
+nocite: '@*'
+link-citations: yes
+github-repo: amlalejini/gvsu-cis331-2023w
+---
+
+# Introduction
+
+This website contains some of the course materials for Winter 2023 CIS 331 at Grand Valley State University.
