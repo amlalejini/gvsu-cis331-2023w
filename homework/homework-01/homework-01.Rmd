@@ -1,0 +1,71 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+
+# Homework 1
+
+## Overview
+
+**This assignment is to be completed individually.**
+I will use your responses to help assign partners.
+
+### Grading
+
+- Uploaded requested files, 5%
+- File is properly/clearly formatted, 5%
+   - Proper section headers for each part of your homework.
+   - You clearly indicate which question each of your responses are associated with.
+- Part A. 10%
+- Part B. 20%
+- Part C. 10%
+- Part D. 50%
+
+### Deliverables
+
+- **.pdf file** with your responses
+
+### Formatting
+
+In the document that you turn in for this homework, **include a heading for each Part.**
+Ensure that you **clearly** indicate which question each of your responses are associated with.
+
+## Part A. Syllabus
+
+1. Read the course syllabus (posted on blackboard).
+   For this question (on the document that you turn in), confirm that you have read the syllabus.
+2. Read the academic honesty policy for the GVSU School of Computing: <https://www.gvsu.edu/computing/academic-honesty-30.htm>.
+   For this question (on the document that you turn in), confirm that you have read and agree to abide by the academic honesty policy.
+
+## Part B. About me
+
+There are no right or wrong answers here.
+For full credit, respond with complete sentences (2 - 3 is probably all you need).
+
+3. Why are you taking this class and what do you hope to get out of the class?
+4. Think about your major and/or career goals. What kinds of data would it be useful to be comfortable analyzing? What kinds of insights would you want to gain from the data?
+
+## Part C. Group survey
+
+For all homework assignments after the first two, you will have the option to work with a partner.
+See the syllabus for group policy.
+Your responses to these questions will help me to assign partners.
+
+5. Would you like to work individually or with a partner?
+6. If you would like to be assigned a partner, is there anyone in the class that you would like to be in a group with? (the request should be mutual to guarantee that I match you)
+7. If you would like to be assigned a partner, is there anyone in the class that you would **not** like to be in a group with?
+8. If you would like to be assigned a partner, would you be okay with a third group member if there are an odd number of individuals who want to work with a partner?
+9. What grade to you expect to earn in this course?
+10. Do you have any prior programming experience? If so, what programming languages do you have prior experience with?
+11. What data analysis software (if any) do you have experience with?
+12. What do you consider to be your strengths? E.g., coding, writing, searching/reading reference material, organization, etc.
+
+## Part D. Data
+
+For this part of your homework, identify a source of "big data" that you find interesting.
+
+13. What source of big data did you choose and why?
+14. Imagine you have a dataset from the source you identified.
+    What do the objects in your dataset represent?
+    Describe at two attributes that each object in the dataset would have.

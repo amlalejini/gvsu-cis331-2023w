@@ -1,0 +1,91 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+
+# Homework 2
+
+## Overview
+
+**This assignment is to be completed individually.**
+
+### Objectives
+
+- Demonstrate R and RStudio installation
+- Demonstrate R package installation
+- Write a function in R
+
+### Grading
+
+- Uploaded requested files, 5%
+- File is properly/clearly formatted, 5%
+   - Proper section headers for each part of your homework.
+   - You clearly indicate which question each of your responses are associated with.
+- Part A: 60%
+- Part B: 30%
+
+### Deliverables
+
+- **.pdf file** with your responses
+
+### Formatting
+
+In the document that you turn in for this homework, **include a heading for each Part.**
+Ensure that you **clearly** indicate which question each of your responses are associated with.
+
+## Part A. Install R and RStudio
+
+### 1. Install R
+
+For this course, you'll need access to a computer with R installed.
+To install R, navigate to <https://cran.r-project.org/>, select the appropriate operating system, and follow the instructions to download and install the most recent version of R (should be version 4.2 or higher).
+
+- If you're having trouble, try reading the installation guide here: <https://rstudio-education.github.io/hopr/starting.html>
+- If you're still having trouble getting R installed on your machine, talk to me during office hours or send me an email!
+
+For credit on this question, take a screenshot of you running R on your computer (either in a terminal or by running the "R" application, which brings up an R console).
+
+### 2. Install RStudio
+
+RStudio is a free, feature-rich IDE for writing R code.
+I am not going to require that you to use RStudio for the rest of this class, but I strongly recommend that you do use RStudio if you are new to programming in R.
+
+You can download and install RStudio (the free version) here: <https://posit.co/downloads/>
+
+For credit on this question, take a screenshot of you running RStudio on your computer.
+
+### 3. Installing packages
+
+Throughout the semester you will need to be able to install R packages that are not pre-loaded into your R installation.
+For example, we'll use the `tidyverse` collection of packages for many common data wrangling tasks.
+The `tidyverse` packages do not come with the default installation of R, so we will need to install them.
+
+To install the complete `tidyverse` collection of packages, you can run the following command in your R console in RStudio.
+
+```
+install.packages("tidyverse")
+```
+
+Alternatively, you can install packages through the RStudio menus: Tools > Install Packages. You would type `tidyverse` in the Packages textbox and click install.
+
+For credit on this question, take a screenshot of you running (it must be clear that you successfully installed the package):
+
+```
+library(tidyverse)
+```
+
+If you have trouble, come talk to me after class / during office hours!
+
+## Part B.
+
+Read Chapter 2 of "Hands-On Programming with R": <https://rstudio-education.github.io/hopr/basics.html>
+
+This chapter introduces much of what we have covered in class (though there are a few things you may not have seen yet).
+As you read, follow along in RStudio.
+
+### 4. R basics
+
+By the end of the chapter, you should be able to write a function that rolls a six-sided die and returns the result.
+Modify the function that rolls a six-sided die to instead roll a 20-sided die.
+Include a screenshot of your code and a screenshot of you running your function.
