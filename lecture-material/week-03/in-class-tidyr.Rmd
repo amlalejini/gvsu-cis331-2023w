@@ -1,0 +1,98 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+
+# In-class activity: using tidyr to create tidy data
+
+## Overview
+
+As part of this activity, you will download three "messy" data sets and use tidyverse functions to transform them into "tidy" data.
+If you want to read more about tidy data, I suggest the following article for an introduction to tidy data: <https://tidyr.tidyverse.org/articles/tidy-data.html>.
+
+The tidyr package provides functions for making messy data "tidy".
+For a complete list of the included functions, see <https://tidyr.tidyverse.org/reference/index.html>.
+
+Understanding tidy data and how to reformat your data into a tidy format is very important, as many of the functions/packages that we will use this semester are written to work with tidy-format data.
+For example, ggplot (the R graphics package that we will be using) assumes tidy data.
+Taking the time now to get comfortable with what it means to have tidy data may save you substantial time later on.
+
+### Goals:
+
+- Work through examples of using tidyr (and dplyr) functions to clean up messy (un-tidy) data
+
+### Sources
+
+- <https://tidyr.tidyverse.org/articles/tidy-data.html>
+- [tidyr functions documentation](https://tidyr.tidyverse.org/reference/index.html)
+- [R for Data Science](https://r4ds.had.co.nz/tidy-data.html)
+
+## Setup
+
+You should have already installed the `tidyverse` collection of packages, which includes the tidyr package.
+But, if you haven't, go ahead and run:
+
+```
+install.packages("tidyverse")
+```
+
+We can load all of the tidyverse packages into R using:
+
+```{r}
+library(tidyverse)
+```
+
+## Messy grade data
+
+### What is tidy data?
+
+You can represent the same underlying data many ways.
+Download the two messy grade data sets from blackboard.
+
+**Challenge problem:** Load messy_grades_1.csv into R:
+
+```{r}
+# Your code here
+```
+
+**Challenge problem:** Load messy_grades_2.csv into R:
+
+```{r}
+# Your code here
+```
+
+**Challenge questions:**
+
+- Why are these data sets (messy_grades_1 and messy_grades_2) not tidy?
+- Sketch out a new way to format the grade data that is tidy.
+- Which tidyr function can you use to reformat the messy grade data? (look through the tidyr functions documentation linked above)
+
+### Making data tidy
+
+**Challenge problem:** Use the function you identified previously to create reformat the grade data into a tidy format:
+
+```{r}
+# Your code here
+```
+
+## Messy temperature data
+
+**Challenge problem:** Load the messy temperatures data into R:
+
+```{r}
+# Your code here
+```
+
+**Challenge questions:**
+
+- Why is this temperature data set messy?
+- Sketch out a new way to format the temperature data so that it is tidy.
+- Which tidyr function can you use to help you reformat the messy temperature data?
+
+**Challenge problem**: Use the function you identified to reformat the temperature data into a tidy format.
+
+```{r}
+# Your code here
+```
+
