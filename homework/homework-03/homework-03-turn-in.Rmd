@@ -1,0 +1,162 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+
+# Homework 3
+
+Names: Rocket Raccoon, Groot
+
+## Part A. Use R as a calculator
+
+### Question 1
+
+```{r}
+# Your code here
+```
+
+### Question 2
+
+```{r}
+# Your code here
+```
+
+### Question 3
+
+```{r}
+# Your code here
+```
+
+## Part B. Built-in Functions
+
+## Question 1
+
+```{r}
+# Your code here
+```
+
+## Question 2
+
+```{r}
+# Your code here
+```
+
+## Question 3
+
+```{r}
+# Your code here
+```
+
+## Question 4
+
+```{r}
+# Your code here
+```
+
+
+## Part C. Creating vectors
+
+## Question 1
+
+```{r}
+# Your code here
+```
+
+## Question 2
+
+```{r}
+# Your code here
+```
+
+## Question 3
+
+```{r}
+# Your code here
+```
+
+
+## Part D. Subsetting vectors
+
+## Question 1
+
+```{r}
+# Your code here
+```
+
+## Question 2
+
+```{r}
+# Your code here
+```
+
+## Question 3
+
+```{r}
+# Your code here
+```
+
+
+## Part E. Types of data
+
+## Question 1
+
+```{r}
+# Your code here
+```
+
+## Question 2
+
+```{r}
+# Your code here
+```
+
+## Question 3
+
+```{r}
+# Your code here
+```
+
+## Question 4
+
+```{r}
+# Your code here
+```
+
+## Question 5
+
+```{r}
+# Your code here
+```
+
+## Question 6
+
+```{r}
+# Your code here
+```
+
+## Question 7
+
+```{r}
+# Your code here
+```
+
+## Part F. Control flow
+
+## Question 1
+
+```{r}
+# Your code here
+```
+
+## Part G. Tidyverse
+
+## Question 1
+
+
+## Question 2
+
+
+## Question 3
+
+
