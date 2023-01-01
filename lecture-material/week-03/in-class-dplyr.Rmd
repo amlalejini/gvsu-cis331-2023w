@@ -8,14 +8,12 @@ output:
 
 These activities are an opportunity to practice using dplyr functions to wrangle data.
 
-## Overview
-
-### Goals:
+## Goals:
 
 - Learn about solving common data manipulation challenges with dplyr
 - Learn to use the pipe operator (`%>%`)
 
-### Sources:
+## Sources:
 
 For more information/documentation on data wrangling with dplyr, I recommend these resources:
 

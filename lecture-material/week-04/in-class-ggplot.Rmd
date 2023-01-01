@@ -1,0 +1,154 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+
+# In-class activity: visualizing data with ggplot
+
+These activities are an opportunity to practice using ggplot to visualize data.
+
+## Overview
+
+### Goals
+
+- Practice using ggplot to create the following kinds of data visualizations:
+  - Boxplot
+  - Line graph
+  - Bar plot
+
+### Sources
+
+For more information/documentation on ggplot, I recommend these resources:
+
+- [ggplot package documentation](https://ggplot2.tidyverse.org/reference/index.html)
+- [ggplot cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)
+- [Data visualization chapter in R for Data Science](https://r4ds.had.co.nz/data-visualisation.html)
+
+## Setup
+
+You should have already installed the `tidyverse` collection of packages, which includes the ggplot2 package.
+If you haven't, go ahead and run:
+
+```
+install.packages("tidyverse")
+```
+
+You can now load all of the tidyverse packages, including ggplot2 with:
+
+```{r}
+library(tidyverse)
+```
+
+## Making a boxplot
+
+A boxplot (sometimes called a box and whiskers plot) displays the distribution of a continous variable.
+An individual boxplot divides a distribution into quartiles and visualizes them in a standardized way.
+For more information about the "anatomy" of a boxplot, see: <https://clauswilke.com/dataviz/boxplots-violins.html#fig:boxplot-schematic>
+
+With ggplot, you can use `geom_boxplot` to create a boxplot.
+
+For the next few challenge problems, we'll make use of the `mpg` dataset.
+Run `?mpg` for more information about the `mpg` dataset.
+
+```{r}
+mpg
+```
+
+**Challenge problem:** use ggplot to visualize highway fuel efficiency (`hwy`) as a function of vehicle class `class`.
+I.e., your x-axis should be vehicle class, and your y-axis should be highway fuel efficiency.
+
+```{r}
+# Your code here
+```
+
+**Challenge problems:** make the following modifications to your boxplot
+
+- Label the x-axis
+- Label the y-axis
+- Overlay a jitter plot (`geom_jitter`)
+- Once you have a jittler plot layered over your boxplot, remove the outliers from being drawn in your boxplot (Hint: run and read through `?geom_boxplot`).
+  - Why do we want to remove the outliers from being drawn on the geom_boxplot layer?
+- Modify your plot to also map class to the color aesthetic
+- Change the color palatte
+- `facet_wrap` by manufacturer
+  - Why are some of the facets missing boxes for some car classes?
+
+## Making a line graph
+
+Now, let's try making a line graph. For this we'll use the `storms` dataset is loaded when you load the tidyverse packages.
+Read more about the `storms` dataset by running `?storms`.
+
+```{r}
+storms
+```
+
+We'll make a line graph showing the number of hurricanes by year.
+So first, let's do some data wrangling on the `storms` dataset:
+
+```{r}
+# Filter down to just the storms categorized as hurricanes
+hurricanes <- storms %>% filter(status == "hurricane")
+# Use the group_by and summarize dplyr functions to count the number
+# of hurricanes per year.
+hurricane_cnt <- hurricanes %>%
+  group_by(year) %>%
+  summarise(
+    year_n = n()
+  )
+```
+
+**Challenge problem:** Use `geom_line` to create a line graph of hurricanes over time.
+
+```{r}
+# Your code here
+```
+
+**Challenge problems:** Modify your line graph as follows
+
+- Label your x and y axis
+- Add a title
+- Change the solid line to a dashed line
+
+## Making a bar plot
+
+Next, we'll make a bar plot. For this, we'll try plotting the distribution of homeworlds of the human characters in the `starwars` dataset.
+The `starwars` dataset is loaded into R when you load the `tidyverse` collection of packages.
+
+```{r}
+starwars
+```
+
+First, let's do some data wrangling on the starwars dataset to
+(1) filter down to just human characters and
+(2) count how many characters are from each homeworld.
+
+```{r}
+sw_humans <- starwars %>% filter(species == "Human")
+sw_homeworlds <- sw_humans %>%
+  group_by(homeworld) %>%
+  summarize(
+    n = n()
+  )
+```
+
+```{r}
+sw_homeworlds
+```
+
+**Challenge problem:** use `geom_col` to plot the number of human characters from each planet (use the `sw_homeworlds` dataframe).
+
+```{r}
+# Your code here
+```
+
+**Challenge question:** What does the NA column represent?
+
+**Challenge problem:** use `geom_bar` to plot the number of human characters from each planet (use the `sw_humans` dataset)
+
+```{r}
+# Your code here
+```
+
+**Challenge question:** Explain the difference between `geom_bar` and `geom_col`
+
