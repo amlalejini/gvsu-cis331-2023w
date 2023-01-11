@@ -1,0 +1,66 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+
+# Homework 4
+
+Names: Rocket Raccoon, Groot
+
+## Setup
+
+Load any libraries needed to run your code here.
+
+```{r}
+# Your code here
+```
+
+## Part A - Calculating basic statistics
+
+### Question 1
+
+
+### Question 2
+
+
+### Question 3
+
+
+### Question 4
+
+
+### Question 5
+
+
+### Question 6
+
+
+### Question 7
+
+
+### Question 8
+
+
+## Part B - Processing customer data
+
+### Question 1
+
+
+### Question 2
+
+
+### Question 3
+
+
+### Question 4
+
+
+### Question 5
+
+
+### Question 6
+
+
+### Question 7
+
