@@ -1,0 +1,61 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+
+# Homework 5
+
+Names:
+
+## Part A - Effective data visualization
+
+### Data visualization 1
+
+
+#### What data are being visualized?
+
+
+#### What point is the visualization trying to communicate?
+
+
+### Data visualization 2
+
+
+#### What data are being visualized?
+
+
+#### What point is the visualization trying to communicate?
+
+
+## Part B - K-nearest neighbors classification
+
+### Question 1
+
+
+### Question 2
+
+
+### Question 3
+
+
+## Part C - Decision tree classification
+
+### Question 1
+
+
+### Question 2
+
+
+### Question 3
+
+
+### Question 4
+
+
+### Question 5
+
+
+### Question 6
+
+

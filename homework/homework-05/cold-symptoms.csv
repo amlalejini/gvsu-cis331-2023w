@@ -1,0 +1,15 @@
+patient_id,sore_throat,caugh,fever,congestion,cold
+1,burning,annoying,yes,no,yes
+2,burning,annoying,yes,yes,yes
+3,scratchy,annoying,yes,no,no
+4,tender,persistent,yes,no,no
+5,tender,debilitating,no,no,no
+6,tender,debilitating,no,yes,yes
+7,scratchy,debilitating,no,yes,no
+8,burning,persistent,yes,no,yes
+9,burning,debilitating,no,no,no
+10,tender,persistent,no,no,no
+11,burning,persistent,no,yes,no
+12,scratchy,persistent,yes,yes,no
+13,scratchy,annoying,no,no,no
+14,tender,persistent,yes,yes,yes
