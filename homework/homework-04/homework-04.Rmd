@@ -16,7 +16,7 @@ I have provided a template R markdown file for you to use (on blackboard).
 
 ### Objectives
 
-This goal of this homework is as follows:
+The goal of this homework is as follows:
 
 - Use R to calculate basic statistics for data attributes
 - Apply simple data preprocessing techniques using R
