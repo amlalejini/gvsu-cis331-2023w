@@ -1,0 +1,151 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+
+# Building a decision tree in R
+
+In this lab activity, we will use the `rpart` R package to build a decision tree classifier.
+
+## Dependencies and setup
+
+We'll use the `rpart`, `rpart.plot`, and `caret` packages in this activity.
+If you do not have these packages installed, you will need to do so (use the `install.packages` command).
+
+```{r, warning=FALSE}
+library(rpart)      # Used to build decision tree model
+library(rpart.plot) # Used to visualize trees
+library(caret)      # Used to build a fancy confusion matrix
+library(tidyverse)
+```
+
+I encourage you to look up the documentation for these packages.
+
+Load the `movie.csv` data (download from blackboard) into R.
+These data contain customer records for a fictional movie rental store.
+The dataset specifies the following attributes for each customer:
+- `CustomerID`
+- `Income`
+- `Age`
+- `Rentals` (total number of video rentals in the past year)
+- `AvgPerVisit` (average number of video rentals per visit during the past year)
+- `Incidentals` (whether the customer tends to buy incidental items at the checkout counter)
+- `Genre` (the customer's preferred movie genre)
+
+```{r}
+# Load data file into R
+data <- read_csv("movie.csv")
+# Turn incidentals and genre attributes into factors
+data <- data %>% mutate(
+  Incidentals = as.factor(Incidentals),
+  Genre = as.factor(Genre)
+)
+```
+
+In this activity, we'll train a decision tree that predicts whether a customer will buy incidental items.
+
+## Building a decision tree
+
+We can use the `rpart` function to build a decison tree:
+
+```{r}
+model <- rpart(
+  formula = Incidentals ~ Income + Age + Rentals + AvgPerVisit + Genre,
+  data = data,
+  parms = list(split = "information")
+)
+model
+```
+
+If you've never seen the formula syntax before, I recommend reading up on it a bit: <https://r4ds.had.co.nz/model-basics.html?q=formula#formulas-and-model-families>
+In the formula used to build our decision tree model, `Incidentals` is our dependent variable and all of the predictor attributes to the right of the `~` are our independent variables.
+
+We can use the `summary` function for a little bit more information about our model:
+
+```{r}
+summary(model)
+```
+
+## Visualizing our decision tree
+
+We'll use functionality from the `rpart.plot` package to visualize the decision tree we built:
+
+```{r}
+# If you want to save the visualization, uncomment the next three lines:
+# pdf("decision_tree.pdf")
+# rpart.plot(model)
+# dev.off()
+# (this isn't using ggplot, so we can't use ggsave)
+
+# Draw plot to make it show up in our R markdown document
+rpart.plot(model)
+```
+
+Take a look at how the tree is visualized and try to figure out what each node (and each number in the nodes mean).
+
+## Evaluating the accuracy of our decision tree
+
+Now that we've trained a decision tree, let's evaluate how accurate the tree is on our training data (i.e., the data we used to build the decision tree).
+Notice that we used _all_ of our data to train our model.
+In general, you don't want to _only_ evaluate classification models on training data; instead, you typically want to split your data into a training set (that you use to build your models) and a testing set (that you use to evaluate the quality of your models).
+But for this activity, let's not worry too much about properly evaluating our model (we'll get to that later on).
+
+We can use the built-in `predict` function to run our decision tree on our original data to see what class it would predict for each customer.
+Run `?predict` to see how the `predict` function works.
+
+The code below will build a "confusion matrix" that we can use to see how accurate our model is and what classes it confuses most often.
+
+```{r}
+ground_truth <- data$Incidentals
+training_predictions <- predict(
+  model,
+  data=data,
+  type="class"
+)
+confusion_matrix <- table(ground_truth, training_predictions)
+confusion_matrix
+```
+
+We can also use the `confusionMatrix` function from the `caret` package to build a fancier confusion matrix for us.
+
+```{r}
+confusionMatrix(confusion_matrix)
+```
+
+## Using our decision tree to make a prediction
+
+Let's imagine we get a new, unseen customer, and we want to predict whether they are likely to purchase incidentals using the decision tree that we built.
+To run our model with new data, we need to create a new dataframe object with the data we want to make predictions about.
+
+```{r}
+new_customer <- list(
+  CustomerID = 15,
+  Income = 42000,
+  Age = 35,
+  Rentals = 2,
+  AvgPerVisit = 1,
+  Genre = "Action"
+)
+```
+
+```{r}
+result <- predict(
+  model,
+  newdata = new_customer,
+  type="class"
+)
+result
+```
+
+What is the prediction for the new customer?
+
+## Exercises
+
+- Identify any lines of code that you do not understand. Use the documentation to figure out what is going on.
+- How accurate is your decision tree at predicting the Incidentals attribute on the training data?
+- Describe the decision tree. What is the most informative attribute for determining whether or not someone will purchase Incidentals?
+- Does the decision tree use all of the predictor attributes?
+- Look at the set of values for favorite genres by known customers. If the new customer's favorite genre of movie is horror, what are the implications for using our model to make a prediction about this customer?
+- Try adjusting the attributes for the new customer we created. What attributes can you change to change the model's prediction?
+- If we did want to split our original dataset into a training set and a testing set, what preprocessing technique could we use to do so?
