@@ -9,3 +9,16 @@ part-a.-syllabus
 part-b.-about-me
 part-c.-group-survey
 part-d.-data
+week-02---overview
+homework-2
+overview-1
+objectives
+grading-1
+deliverables-1
+formatting-1
+part-a.-install-r-and-rstudio
+install-r
+install-rstudio
+installing-packages
+part-b.
+r-basics
