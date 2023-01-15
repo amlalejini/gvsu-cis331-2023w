@@ -9,5 +9,9 @@ rmd_files: [
   "homework/homework-01/homework-01.Rmd",
   "lecture-material/week-02/week-02.md",
   "homework/homework-02/homework-02.Rmd",
+  "lecture-material/week-03/week-03.md",
+  "lecture-material/week-03/rmarkdown-getting-started.Rmd",
+  "lecture-material/week-03/in-class-dplyr.Rmd",
+  "lecture-material/week-03/in-class-tidyr.Rmd",
   "tail.Rmd"
 ]

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>GVSU CIS 331 - Data analysis tools and techniques (Winter 2023)</title>
-  <meta name="description" content="GVSU CIS 331 - Data analysis tools and techniques (Winter 2023)" />
+  <title>Chapter 7 Getting Started with R Markdown | GVSU CIS 331 - Data analysis tools and techniques (Winter 2023)</title>
+  <meta name="description" content="Chapter 7 Getting Started with R Markdown | GVSU CIS 331 - Data analysis tools and techniques (Winter 2023)" />
   <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="GVSU CIS 331 - Data analysis tools and techniques (Winter 2023)" />
+  <meta property="og:title" content="Chapter 7 Getting Started with R Markdown | GVSU CIS 331 - Data analysis tools and techniques (Winter 2023)" />
   <meta property="og:type" content="book" />
   
   
   <meta name="github-repo" content="amlalejini/gvsu-cis331-2023w" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="GVSU CIS 331 - Data analysis tools and techniques (Winter 2023)" />
+  <meta name="twitter:title" content="Chapter 7 Getting Started with R Markdown | GVSU CIS 331 - Data analysis tools and techniques (Winter 2023)" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="week-01---overview.html"/>
+<link rel="prev" href="week-03---overview.html"/>
+<link rel="next" href="in-class-activity-using-dplyr-to-manipulate-data.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -269,26 +269,95 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">GVSU CIS 331 - Data analysis tools and techniques (Winter 2023)</h1>
-<p class="author"><em>Instructor: Dr. Alexander Lalejini</em></p>
-<p class="date"><em>2023-01-15</em></p>
+<div id="getting-started-with-r-markdown" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Getting Started with R Markdown<a href="getting-started-with-r-markdown.html#getting-started-with-r-markdown" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>R markdown documents are a way to interweave <a href="https://www.markdownguide.org/">markdown</a> with R. This enables us to write nicely formatted documents with R code (and output from your R code) embedded directly in the document.
+Find examples of compiled R markdown documents here: <a href="https://rmarkdown.rstudio.com/gallery.html" class="uri">https://rmarkdown.rstudio.com/gallery.html</a>
+In fact, this page is generated with R Markdown!
+Source code for this page <a href="https://github.com/amlalejini/gvsu-cis331-2023w/tree/main/lecture-material/week-03">here</a>.</p>
+<div id="dependencies" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Dependencies<a href="getting-started-with-r-markdown.html#dependencies" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To use R markdown, you’ll need to install the following packages: <code>markdown</code> and <code>rmarkdown</code>.
+You should also want to go ahead and install the <code>tinytex</code> package (+ install TinyTex) to be able generate PDF output from your R Markdown documents.
+See the instructions below!</p>
+<div id="installing-r-packages" class="section level3 hasAnchor" number="7.1.1">
+<h3><span class="header-section-number">7.1.1</span> Installing R packages<a href="getting-started-with-r-markdown.html#installing-r-packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>As previously mentioned, there are <em>many</em> R packages (&gt; 18,000!) with all sorts of useful functionality.
+To install an R package, use the <code>install.packages</code> function in your R console (e.g., in RStudio).
+Run <code>?install.packages</code> in your R console to read its help page.</p>
+<p>To install the <code>markdown</code> and <code>rmarkdown</code> packages, run the following command in your R console:</p>
+<pre><code>install.packages(c(&quot;markdown&quot;, &quot;rmarkdown&quot;))</code></pre>
+<p>Once the installations finish, you should be able to run the following two commands without errors:</p>
+<pre><code>library(markdown)
+library(rmarkdown)</code></pre>
+<p>For this class, you’ll also need to be able to generate PDF output from your R Markdown documents.
+To do so, you’ll need to install LaTex (if you’re not sure what that is, no worries!).
+Run the following two commands in your R console in RStudio:</p>
+<pre><code>install.packages(&#39;tinytex&#39;)
+tinytex::install_tinytex()</code></pre>
 </div>
-<div id="introduction" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction<a href="index.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This website contains some of the course materials for Winter 2023 CIS 331 at Grand Valley State University.</p>
+</div>
+<div id="create-a-new-r-markdown-document-in-rstudio" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Create a new R Markdown document in RStudio<a href="getting-started-with-r-markdown.html#create-a-new-r-markdown-document-in-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Click the new file button in the top right of the RStudio window, and select R Markdown.</p>
+<p>In RStudio, you should get a pop-up for creating a new r markdown document. For now, there are two relevant options:</p>
+<ol style="list-style-type: decimal">
+<li>Click the “Create Empty Document” in the bottom left of the popup. This will create an empty R markdown file for you.</li>
+<li>Fill out the title, author (you!), and date fields and press “Okay”.
+This will create a new R markdown file, but RStudio will initialize your file with a bunch of stuff (this stuff is helpful information, but you will want to delete it all for any assignments in this class).</li>
+</ol>
+</div>
+<div id="anatomy-of-an-r-markdown-document" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Anatomy of an R Markdown document<a href="getting-started-with-r-markdown.html#anatomy-of-an-r-markdown-document" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There are three basic components in an R Markdown document: the metadata, text, and code.</p>
+<p>Here’s the contents for a minimal R Markdown document (from <a href="https://bookdown.org/yihui/rmarkdown/basics.html" class="uri">https://bookdown.org/yihui/rmarkdown/basics.html</a>):</p>
+<p><img src="https://raw.githubusercontent.com/amlalejini/gvsu-cis331-2023w/main/lecture-material/week-03/media/minimal-rmd-example.png" /></p>
+<p>An R Markdown document should be a plain text file (i.e., don’t try to write one in google docs or microsoft word!) and conventionally has the <code>.Rmd</code> file extension.</p>
+<div id="frontmatter-metadata" class="section level3 hasAnchor" number="7.3.1">
+<h3><span class="header-section-number">7.3.1</span> Frontmatter (metadata)<a href="getting-started-with-r-markdown.html#frontmatter-metadata" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The metadata (or the frontmatter) specifies how your R Markdown should be compiled. E.g., the output file type, whether to include a table of contents, etc.</p>
+<p>The metadata should be written between a pair of three dashes <code>---</code> at the top of your document (see minimal example).</p>
+<p>For now, don’t worry too much about what you should include in your document metadata. For the most part, you can just use what RStudio includes in your document.</p>
+</div>
+<div id="text" class="section level3 hasAnchor" number="7.3.2">
+<h3><span class="header-section-number">7.3.2</span> Text<a href="getting-started-with-r-markdown.html#text" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The body of your document follows the metadata. Any text (i.e., everything that isn’t code) you include in your document should follow markdown syntax.</p>
+<p>If you’re not already familiar with markdown, read over this: <a href="https://www.markdownguide.org/getting-started" class="uri">https://www.markdownguide.org/getting-started</a>.</p>
+<ul>
+<li>For basic markdown syntax, see: <a href="https://www.markdownguide.org/basic-syntax/" class="uri">https://www.markdownguide.org/basic-syntax/</a>. Being familiar with basic syntax should be just about everything you need for your homework assignments in this class.</li>
+<li>For more advanced markdown syntax, see: <a href="https://www.markdownguide.org/extended-syntax/" class="uri">https://www.markdownguide.org/extended-syntax/</a>.</li>
+<li>You can also refer to <a href="https://bookdown.org/yihui/rmarkdown/markdown-syntax.html#markdown-syntax">Section 2.5 in R Markdown: The Definitive Guide</a> for more info on markdown.</li>
+</ul>
+</div>
+<div id="code" class="section level3 hasAnchor" number="7.3.3">
+<h3><span class="header-section-number">7.3.3</span> Code<a href="getting-started-with-r-markdown.html#code" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In general, you can include code in your R Markdown documents in two ways:</p>
+<ul>
+<li>Inline code begin with <code>`r</code> and end with a <code>`</code>. E.g., <code>2</code> would render the result of <code>log(4, base=2)</code> inline.</li>
+<li>You can include a “code chunk” inside your R Markdown document. A code chunk begins with three backticks <code>```{r}</code> and end with three backticks (see minimal example above for an example). There are many options tha tyou can specify in the <code>{}</code> at the beginning of a code chunk. See <a href="https://yihui.org/knitr/options/" class="uri">https://yihui.org/knitr/options/</a> for details.</li>
+</ul>
+</div>
+</div>
+<div id="knitting" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> “Knitting”<a href="getting-started-with-r-markdown.html#knitting" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To compile an R Markdown document into a PDF or HTML file, you need to “Knit” it. In RStudio, this is pretty straightforward. Just click the “Knit” button on your document in RStudio.</p>
+</div>
+<div id="resources" class="section level2 hasAnchor" number="7.5">
+<h2><span class="header-section-number">7.5</span> Resources<a href="getting-started-with-r-markdown.html#resources" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><a href="https://bookdown.org/yihui/rmarkdown/">R Markdown: The Definitive Guide</a></li>
+<li>Code chunk options: <a href="https://yihui.org/knitr/options/" class="uri">https://yihui.org/knitr/options/</a></li>
+</ul>
 
 </div>
-
-
-
+</div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="week-01---overview.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="week-03---overview.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="in-class-activity-using-dplyr-to-manipulate-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -319,7 +388,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/amlalejini/gvsu-cis331-2023w/tree/main/index.Rmd",
+"link": "https://github.com/amlalejini/gvsu-cis331-2023w/tree/main/lecture-material/week-03/rmarkdown-getting-started.Rmd",
 "text": "Edit"
 },
 "history": {
