@@ -57,3 +57,17 @@ messy-grade-data
 what-is-tidy-data
 making-data-tidy
 messy-temperature-data
+homework-3
+overview-4
+objectives-1
+grading-2
+deliverables-2
+setup-2
+recommended-reference-material
+part-a.-use-r-as-a-calculator
+part-b.-built-in-functions
+part-c.-creating-vectors
+part-d.-subsetting-vectors
+part-e.-types-of-data
+part-f.-control-flow
+part-g.-tidyverse

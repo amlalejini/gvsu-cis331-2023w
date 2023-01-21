@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 9 In-class activity: using tidyr to create tidy data | GVSU CIS 331 - Data analysis tools and techniques (Winter 2023)</title>
-  <meta name="description" content="Chapter 9 In-class activity: using tidyr to create tidy data | GVSU CIS 331 - Data analysis tools and techniques (Winter 2023)" />
+  <title>Chapter 10 Homework 3 | GVSU CIS 331 - Data analysis tools and techniques (Winter 2023)</title>
+  <meta name="description" content="Chapter 10 Homework 3 | GVSU CIS 331 - Data analysis tools and techniques (Winter 2023)" />
   <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 9 In-class activity: using tidyr to create tidy data | GVSU CIS 331 - Data analysis tools and techniques (Winter 2023)" />
+  <meta property="og:title" content="Chapter 10 Homework 3 | GVSU CIS 331 - Data analysis tools and techniques (Winter 2023)" />
   <meta property="og:type" content="book" />
   
   
   <meta name="github-repo" content="amlalejini/gvsu-cis331-2023w" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 9 In-class activity: using tidyr to create tidy data | GVSU CIS 331 - Data analysis tools and techniques (Winter 2023)" />
+  <meta name="twitter:title" content="Chapter 10 Homework 3 | GVSU CIS 331 - Data analysis tools and techniques (Winter 2023)" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="in-class-activity-using-dplyr-to-manipulate-data.html"/>
-<link rel="next" href="homework-3.html"/>
+<link rel="prev" href="in-class-activity-using-tidyr-to-create-tidy-data.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -289,75 +289,182 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="in-class-activity-using-tidyr-to-create-tidy-data" class="section level1 hasAnchor" number="9">
-<h1><span class="header-section-number">Chapter 9</span> In-class activity: using tidyr to create tidy data<a href="in-class-activity-using-tidyr-to-create-tidy-data.html#in-class-activity-using-tidyr-to-create-tidy-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="overview-3" class="section level2 hasAnchor" number="9.1">
-<h2><span class="header-section-number">9.1</span> Overview<a href="in-class-activity-using-tidyr-to-create-tidy-data.html#overview-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>As part of this activity, you will download three “messy” data sets and use tidyverse functions to transform them into “tidy” data.
-If you want to read more about tidy data, I suggest the following article for an introduction to tidy data: <a href="https://tidyr.tidyverse.org/articles/tidy-data.html" class="uri">https://tidyr.tidyverse.org/articles/tidy-data.html</a>.</p>
-<p>The tidyr package provides functions for making messy data “tidy”.
-For a complete list of the included functions, see <a href="https://tidyr.tidyverse.org/reference/index.html" class="uri">https://tidyr.tidyverse.org/reference/index.html</a>.</p>
-<p>Understanding tidy data and how to reformat your data into a tidy format is very important, as many of the functions/packages that we will use this semester are written to work with tidy-format data.
-For example, ggplot (the R graphics package that we will be using) assumes tidy data.
-Taking the time now to get comfortable with what it means to have tidy data may save you substantial time later on.</p>
-<div id="goals-1" class="section level3 hasAnchor" number="9.1.1">
-<h3><span class="header-section-number">9.1.1</span> Goals:<a href="in-class-activity-using-tidyr-to-create-tidy-data.html#goals-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="homework-3" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">Chapter 10</span> Homework 3<a href="homework-3.html#homework-3" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="overview-4" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Overview<a href="homework-3.html#overview-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This assignment may be completed with your group.
+Each group will submit one copy of their homework responses to blackboard.</p>
+<p>Unlike previous in your previous homework assignments, in this assignment, you will use R markdown to complete your homework.
+You will turn in both the .Rmd file and the knitted .pdf file to blackboard.
+I have provided a template R markdown file for you to use (on blackboard).</p>
+<div id="objectives-1" class="section level3 hasAnchor" number="10.1.1">
+<h3><span class="header-section-number">10.1.1</span> Objectives<a href="homework-3.html#objectives-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This goal of this homework is as follows:</p>
 <ul>
-<li>Work through examples of using tidyr (and dplyr) functions to clean up messy (un-tidy) data</li>
+<li>Give you an opportunity to practice some R programming</li>
+<li>Make sure you are comfortable creating and knitting an R Markdown document</li>
 </ul>
 </div>
-<div id="sources-1" class="section level3 hasAnchor" number="9.1.2">
-<h3><span class="header-section-number">9.1.2</span> Sources<a href="in-class-activity-using-tidyr-to-create-tidy-data.html#sources-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="grading-2" class="section level3 hasAnchor" number="10.1.2">
+<h3><span class="header-section-number">10.1.2</span> Grading<a href="homework-3.html#grading-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
-<li><a href="https://tidyr.tidyverse.org/articles/tidy-data.html" class="uri">https://tidyr.tidyverse.org/articles/tidy-data.html</a></li>
-<li><a href="https://tidyr.tidyverse.org/reference/index.html">tidyr functions documentation</a></li>
-<li><a href="https://r4ds.had.co.nz/tidy-data.html">R for Data Science</a></li>
+<li>Uploaded requested files, 5%</li>
+<li>File is properly/clearly formatted, 5%
+<ul>
+<li>Proper section headers for each part of your homework.</li>
+<li>You clearly indicate which question each of your responses are associated with.</li>
+</ul></li>
+<li>All questions: 90%
+<ul>
+<li>All questions are weighted evenly.</li>
+</ul></li>
+</ul>
+</div>
+<div id="deliverables-2" class="section level3 hasAnchor" number="10.1.3">
+<h3><span class="header-section-number">10.1.3</span> Deliverables<a href="homework-3.html#deliverables-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>.Rmd file used to knit your .pdf file</li>
+<li>.pdf file knitted from your R markdown file</li>
+</ul>
+<p>I strongly recommend that you read over your knitted .pdf file before submitting your homework to make sure that it is formatted as you expect.</p>
+</div>
+</div>
+<div id="setup-2" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Setup<a href="homework-3.html#setup-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>I strongly encourage you to stay organized for this course.
+I recommend that you directory on your computer where you can manage all of your work for this class (e.g., “cis331” would make for a good name).
+Within that directory, I recommend keeping each of your homework assignments and projects separated into their own directories.
+For example, I might organize things as follows:</p>
+<pre><code>cis331/
+  homeworks/
+    hw01
+    hw02
+    hw03
+    ...</code></pre>
+<p>Download the R markdown template provided to you (on blackboard) and answer all of the questions below.
+The template is meant to help you organize/format your responses.
+You will need to add explanatory text and code chunks as necessary (be sure to update your names!).</p>
+<div id="recommended-reference-material" class="section level3 hasAnchor" number="10.2.1">
+<h3><span class="header-section-number">10.2.1</span> Recommended reference material<a href="homework-3.html#recommended-reference-material" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You will need to refer to R documentation / R programming reference material in order to answer all of the questions.</p>
+<ul>
+<li><a href="https://dplyr.tidyverse.org/articles/dplyr.html">Introduction to dplyr</a></li>
+<li><a href="https://tidyr.tidyverse.org/articles/tidy-data.html">Introduction to tidying data with tidyr</a></li>
+<li><a href="https://r4ds.had.co.nz/">R for Data Science</a></li>
 </ul>
 </div>
 </div>
-<div id="setup-1" class="section level2 hasAnchor" number="9.2">
-<h2><span class="header-section-number">9.2</span> Setup<a href="in-class-activity-using-tidyr-to-create-tidy-data.html#setup-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>You should have already installed the <code>tidyverse</code> collection of packages, which includes the tidyr package.
-But, if you haven’t, go ahead and run:</p>
-<pre><code>install.packages(&quot;tidyverse&quot;)</code></pre>
-<p>We can load all of the tidyverse packages into R using:</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="in-class-activity-using-tidyr-to-create-tidy-data.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div id="part-a.-use-r-as-a-calculator" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> Part A. Use R as a calculator<a href="homework-3.html#part-a.-use-r-as-a-calculator" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Write one code chunk for each of the calculations below.
+For example, if the calculation is <code>2 + 2</code>, your code chunk should look something like this when your R Markdown document is compiled:</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="homework-3.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1] 4</code></pre>
+<p>Each equation should be <em>translated directly into code</em>.
+Do not simplify any of the calculations (e.g., <code>2 + 1</code> should be <code>2 + 1</code> in your code, not <code>3</code>).</p>
+<ol style="list-style-type: decimal">
+<li><span class="math display">\[ 1+2(3+4) \]</span></li>
+<li><span class="math display">\[ log_2(4^3 + 3^{2+1}) \]</span></li>
+<li><span class="math display">\[ \sqrt{(4+3)(2+1)} \]</span></li>
+</ol>
 </div>
-<div id="messy-grade-data" class="section level2 hasAnchor" number="9.3">
-<h2><span class="header-section-number">9.3</span> Messy grade data<a href="in-class-activity-using-tidyr-to-create-tidy-data.html#messy-grade-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="what-is-tidy-data" class="section level3 hasAnchor" number="9.3.1">
-<h3><span class="header-section-number">9.3.1</span> What is tidy data?<a href="in-class-activity-using-tidyr-to-create-tidy-data.html#what-is-tidy-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>You can represent the same underlying data many ways.
-Download the two messy grade data sets from blackboard.</p>
-<p><strong>Challenge problem:</strong> Load messy_grades_1.csv into R:</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="in-class-activity-using-tidyr-to-create-tidy-data.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
-<p><strong>Challenge problem:</strong> Load messy_grades_2.csv into R:</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="in-class-activity-using-tidyr-to-create-tidy-data.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
-<p><strong>Challenge questions:</strong></p>
-<ul>
-<li>Why are these data sets (messy_grades_1 and messy_grades_2) not tidy?</li>
-<li>Sketch out a new way to format the grade data that is tidy.</li>
-<li>Which tidyr function can you use to reformat the messy grade data? (look through the tidyr functions documentation linked above)</li>
-</ul>
+<div id="part-b.-built-in-functions" class="section level2 hasAnchor" number="10.4">
+<h2><span class="header-section-number">10.4</span> Part B. Built-in Functions<a href="homework-3.html#part-b.-built-in-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A built-in function is one that comes pre-loaded in R (you don’t need to install and load a package to use).
+To learn how to use a built-in loaded function that you don’t know how to use appropriately, use the <code>help()</code> function.
+<code>help()</code> takes one parameter, the name of the function that you want information about (e.g., <code>help(abs)</code>).
+Instead of the help function, you could also use enter <code>?</code> and then the name of the function in your R console (e.g., <code>?abs</code>).</p>
+<p>Familiarize yourself with the built-in functions <code>abs()</code>, <code>round()</code>, <code>sqrt()</code>, <code>tolower()</code>, and <code>toupper()</code>.</p>
+<p>Use these built-in functions to write code that prints the following items:</p>
+<ol style="list-style-type: decimal">
+<li>The absolute value of -15.5.</li>
+<li>4.483847 rounded to one decimal place. The function <code>round()</code> takes two arguments, the number to be rounded and the number of decimal places.</li>
+<li>“species” in all capital letters.</li>
+<li>“SPECIES” in all lower case letters.</li>
+</ol>
 </div>
-<div id="making-data-tidy" class="section level3 hasAnchor" number="9.3.2">
-<h3><span class="header-section-number">9.3.2</span> Making data tidy<a href="in-class-activity-using-tidyr-to-create-tidy-data.html#making-data-tidy" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><strong>Challenge problem:</strong> Use the function you identified previously to create reformat the grade data into a tidy format:</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="in-class-activity-using-tidyr-to-create-tidy-data.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+<div id="part-c.-creating-vectors" class="section level2 hasAnchor" number="10.5">
+<h2><span class="header-section-number">10.5</span> Part C. Creating vectors<a href="homework-3.html#part-c.-creating-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Create the following vectors using just <code>seq()</code> and/or <code>rep()</code>. (don’t use <code>c()</code>)</p>
+<ol style="list-style-type: decimal">
+<li>Positive integers from 1 to 99</li>
+<li>Odd integers between 1 and 99</li>
+<li>The numbers <code>1,1,1,2,2,2,3,3,3</code> (hint: read the help pages for <code>seq</code> and <code>rep</code>!)</li>
+</ol>
 </div>
+<div id="part-d.-subsetting-vectors" class="section level2 hasAnchor" number="10.6">
+<h2><span class="header-section-number">10.6</span> Part D. Subsetting vectors<a href="homework-3.html#part-d.-subsetting-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Use subsetting syntax (square brackets) to write code that completes the following using the vector <code>y</code>.
+If you’re not sure where to start on these questions, I suggest reading through the following Software Carpentry lesson on subsetting data: <a href="https://swcarpentry.github.io/r-novice-gapminder/06-data-subsetting/index.html" class="uri">https://swcarpentry.github.io/r-novice-gapminder/06-data-subsetting/index.html</a></p>
+<pre><code>y &lt;- c(3, 2, 15, -1, 22, 1, 9, 17, 5)</code></pre>
+<ol style="list-style-type: decimal">
+<li>Display only the first value of <code>y</code>.</li>
+<li>Display the last value of <code>y</code>, in a way that would work if <code>y</code> were any length. (hint: <code>?length</code>)</li>
+<li>Display only the values in <code>y</code> that are greater than the mean of <code>y</code>.</li>
+</ol>
 </div>
-<div id="messy-temperature-data" class="section level2 hasAnchor" number="9.4">
-<h2><span class="header-section-number">9.4</span> Messy temperature data<a href="in-class-activity-using-tidyr-to-create-tidy-data.html#messy-temperature-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Challenge problem:</strong> Load the messy temperatures data into R:</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="in-class-activity-using-tidyr-to-create-tidy-data.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
-<p><strong>Challenge questions:</strong></p>
-<ul>
-<li>Why is this temperature data set messy?</li>
-<li>Sketch out a new way to format the temperature data so that it is tidy.</li>
-<li>Which tidyr function can you use to help you reformat the messy temperature data?</li>
-</ul>
-<p><strong>Challenge problem</strong>: Use the function you identified to reformat the temperature data into a tidy format.</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="in-class-activity-using-tidyr-to-create-tidy-data.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+<div id="part-e.-types-of-data" class="section level2 hasAnchor" number="10.7">
+<h2><span class="header-section-number">10.7</span> Part E. Types of data<a href="homework-3.html#part-e.-types-of-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Using the vector <code>y</code> write code that completes the following tasks.
+If you’re not sure how to coerce one data type into another, I suggest the following Software Carpentry guide: <a href="https://lms.gvsu.edu/ultra/courses/_397858_1/cl/outline" class="uri">https://lms.gvsu.edu/ultra/courses/_397858_1/cl/outline</a></p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="homework-3.html#cb58-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">15</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">22</span>, <span class="dv">1</span>, <span class="dv">9</span>, <span class="dv">17</span>, <span class="dv">5</span>)</span></code></pre></div>
+<ol style="list-style-type: decimal">
+<li><p>Make a logical (TRUE/FALSE) vector describing which values in y are positive.</p></li>
+<li><p>Make a logical vector describing whether any of the values of y are equal to the mean of y.</p></li>
+<li><p>Coerce the vector you just made (in #2 above) from a logical vector to a character vector.</p></li>
+<li><p>Make a logical vector describing whether any of the values of y are equal to the median of y.</p></li>
+<li><p>Coerce the vector you just made (in #4 above) into a categorial vector (using <code>factor()</code>).</p></li>
+<li><p>Make a matrix with 4 rows and 3 columns that looks like this:</p>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6
+## [3,]    7    8    9
+## [4,]   10   11   12</code></pre></li>
+<li><p>Coerce the matrix you made in the previous question into a dataframe.</p></li>
+</ol>
+</div>
+<div id="part-f.-control-flow" class="section level2 hasAnchor" number="10.8">
+<h2><span class="header-section-number">10.8</span> Part F. Control flow<a href="homework-3.html#part-f.-control-flow" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Learning to use R (or any data analysis tool) will require you to be comfortable learning by readint documentation / online tutorials.
+Read through the following Software Carpentry guide on control flow in R: <a href="https://swcarpentry.github.io/r-novice-gapminder/07-control-flow/index.html" class="uri">https://swcarpentry.github.io/r-novice-gapminder/07-control-flow/index.html</a>.
+After reading the guide, you should be familiar with how to use loops and if statements in R.
+For extra help with looping in R, see <a href="https://r4ds.had.co.nz/iteration.html">Chapter 21 in R for Data Science</a>.</p>
+<ol style="list-style-type: decimal">
+<li>Given the vector of 6 WNBA teams and the vector of teams that qualified for the playoffs,
+write a loop that iterates over each team in <code>teams</code> and prints out the team name and whether or not that team qualified for the playoffs.
+If a team qualified for the playoff, print the team’s name and “Qualified”. Otherwise, print the team’s name and “Not qualified”.
+For example, “Atlanta Dream: Qualified” or “Indiana Fever: Not qualified”.
+<strong>For credit, your solution <em>must</em> must a loop and an if-else statement.</strong>
+Hint: the <code>%in%</code> operator may be useful for checking if a team is qualified for the playoffs.</li>
+</ol>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="homework-3.html#cb60-1" aria-hidden="true" tabindex="-1"></a>teams <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb60-2"><a href="homework-3.html#cb60-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Atlanta Dream&quot;</span>,</span>
+<span id="cb60-3"><a href="homework-3.html#cb60-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Chicago Sky&quot;</span>,</span>
+<span id="cb60-4"><a href="homework-3.html#cb60-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Connecticut Sun&quot;</span>,</span>
+<span id="cb60-5"><a href="homework-3.html#cb60-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Indiana Fever&quot;</span>,</span>
+<span id="cb60-6"><a href="homework-3.html#cb60-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;New York Liberty&quot;</span>,</span>
+<span id="cb60-7"><a href="homework-3.html#cb60-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Washington Mystics&quot;</span></span>
+<span id="cb60-8"><a href="homework-3.html#cb60-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb60-9"><a href="homework-3.html#cb60-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-10"><a href="homework-3.html#cb60-10" aria-hidden="true" tabindex="-1"></a>qualified_playoffs <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb60-11"><a href="homework-3.html#cb60-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Las Vegas Aces&quot;</span>,</span>
+<span id="cb60-12"><a href="homework-3.html#cb60-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Chicago Sky&quot;</span>,</span>
+<span id="cb60-13"><a href="homework-3.html#cb60-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Connecticut Sun&quot;</span>,</span>
+<span id="cb60-14"><a href="homework-3.html#cb60-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Seattle Storm&quot;</span>,</span>
+<span id="cb60-15"><a href="homework-3.html#cb60-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Washington Mystics&quot;</span>,</span>
+<span id="cb60-16"><a href="homework-3.html#cb60-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Dallas Wings&quot;</span>,</span>
+<span id="cb60-17"><a href="homework-3.html#cb60-17" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;New York Liberty&quot;</span>,</span>
+<span id="cb60-18"><a href="homework-3.html#cb60-18" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Phoenix Mercury&quot;</span></span>
+<span id="cb60-19"><a href="homework-3.html#cb60-19" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+</div>
+<div id="part-g.-tidyverse" class="section level2 hasAnchor" number="10.9">
+<h2><span class="header-section-number">10.9</span> Part G. Tidyverse<a href="homework-3.html#part-g.-tidyverse" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>Select one of the packages in the tidyverse (see: <a href="https://www.tidyverse.org/packages/" class="uri">https://www.tidyverse.org/packages/</a>).</li>
+<li>Find the function reference for that package (i.e., the webpage that lists the functions and links to the documentation for each function).</li>
+<li>Pick one of the functions you think looks useful and run the example code in that function’s documentation (your answer to this question should be working example code).</li>
+</ol>
 
 </div>
 </div>
@@ -366,8 +473,8 @@ Download the two messy grade data sets from blackboard.</p>
           </div>
         </div>
       </div>
-<a href="in-class-activity-using-dplyr-to-manipulate-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="homework-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="in-class-activity-using-tidyr-to-create-tidy-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -398,7 +505,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/amlalejini/gvsu-cis331-2023w/tree/main/lecture-material/week-03/in-class-tidyr.Rmd",
+"link": "https://github.com/amlalejini/gvsu-cis331-2023w/tree/main/homework/homework-03/homework-03.Rmd",
 "text": "Edit"
 },
 "history": {
