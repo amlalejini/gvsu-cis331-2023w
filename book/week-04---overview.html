@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 9 In-class activity: using tidyr to create tidy data | GVSU CIS 331 - Data analysis tools and techniques (Winter 2023)</title>
-  <meta name="description" content="Chapter 9 In-class activity: using tidyr to create tidy data | GVSU CIS 331 - Data analysis tools and techniques (Winter 2023)" />
+  <title>Chapter 11 Week 04 - Overview | GVSU CIS 331 - Data analysis tools and techniques (Winter 2023)</title>
+  <meta name="description" content="Chapter 11 Week 04 - Overview | GVSU CIS 331 - Data analysis tools and techniques (Winter 2023)" />
   <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 9 In-class activity: using tidyr to create tidy data | GVSU CIS 331 - Data analysis tools and techniques (Winter 2023)" />
+  <meta property="og:title" content="Chapter 11 Week 04 - Overview | GVSU CIS 331 - Data analysis tools and techniques (Winter 2023)" />
   <meta property="og:type" content="book" />
   
   
   <meta name="github-repo" content="amlalejini/gvsu-cis331-2023w" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 9 In-class activity: using tidyr to create tidy data | GVSU CIS 331 - Data analysis tools and techniques (Winter 2023)" />
+  <meta name="twitter:title" content="Chapter 11 Week 04 - Overview | GVSU CIS 331 - Data analysis tools and techniques (Winter 2023)" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="in-class-activity-using-dplyr-to-manipulate-data.html"/>
-<link rel="next" href="homework-3.html"/>
+<link rel="prev" href="homework-3.html"/>
+<link rel="next" href="in-class-activity-visualizing-data-with-ggplot.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -303,85 +303,21 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="in-class-activity-using-tidyr-to-create-tidy-data" class="section level1 hasAnchor" number="9">
-<h1><span class="header-section-number">Chapter 9</span> In-class activity: using tidyr to create tidy data<a href="in-class-activity-using-tidyr-to-create-tidy-data.html#in-class-activity-using-tidyr-to-create-tidy-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="overview-3" class="section level2 hasAnchor" number="9.1">
-<h2><span class="header-section-number">9.1</span> Overview<a href="in-class-activity-using-tidyr-to-create-tidy-data.html#overview-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>As part of this activity, you will download three “messy” data sets and use tidyverse functions to transform them into “tidy” data.
-If you want to read more about tidy data, I suggest the following article for an introduction to tidy data: <a href="https://tidyr.tidyverse.org/articles/tidy-data.html" class="uri">https://tidyr.tidyverse.org/articles/tidy-data.html</a>.</p>
-<p>The tidyr package provides functions for making messy data “tidy”.
-For a complete list of the included functions, see <a href="https://tidyr.tidyverse.org/reference/index.html" class="uri">https://tidyr.tidyverse.org/reference/index.html</a>.</p>
-<p>Understanding tidy data and how to reformat your data into a tidy format is very important, as many of the functions/packages that we will use this semester are written to work with tidy-format data.
-For example, ggplot (the R graphics package that we will be using) assumes tidy data.
-Taking the time now to get comfortable with what it means to have tidy data may save you substantial time later on.</p>
-<div id="goals-1" class="section level3 hasAnchor" number="9.1.1">
-<h3><span class="header-section-number">9.1.1</span> Goals:<a href="in-class-activity-using-tidyr-to-create-tidy-data.html#goals-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="week-04---overview" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">Chapter 11</span> Week 04 - Overview<a href="week-04---overview.html#week-04---overview" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>R bootcamp continued! Topics for this week:</p>
 <ul>
-<li>Work through examples of using tidyr (and dplyr) functions to clean up messy (un-tidy) data</li>
+<li>Creating graphics with ggplot</li>
 </ul>
-</div>
-<div id="sources-1" class="section level3 hasAnchor" number="9.1.2">
-<h3><span class="header-section-number">9.1.2</span> Sources<a href="in-class-activity-using-tidyr-to-create-tidy-data.html#sources-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><a href="https://tidyr.tidyverse.org/articles/tidy-data.html" class="uri">https://tidyr.tidyverse.org/articles/tidy-data.html</a></li>
-<li><a href="https://tidyr.tidyverse.org/reference/index.html">tidyr functions documentation</a></li>
-<li><a href="https://r4ds.had.co.nz/tidy-data.html">R for Data Science</a></li>
-</ul>
-</div>
-</div>
-<div id="setup-1" class="section level2 hasAnchor" number="9.2">
-<h2><span class="header-section-number">9.2</span> Setup<a href="in-class-activity-using-tidyr-to-create-tidy-data.html#setup-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>You should have already installed the <code>tidyverse</code> collection of packages, which includes the tidyr package.
-But, if you haven’t, go ahead and run:</p>
-<pre><code>install.packages(&quot;tidyverse&quot;)</code></pre>
-<p>We can load all of the tidyverse packages into R using:</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="in-class-activity-using-tidyr-to-create-tidy-data.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
-</div>
-<div id="messy-grade-data" class="section level2 hasAnchor" number="9.3">
-<h2><span class="header-section-number">9.3</span> Messy grade data<a href="in-class-activity-using-tidyr-to-create-tidy-data.html#messy-grade-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="what-is-tidy-data" class="section level3 hasAnchor" number="9.3.1">
-<h3><span class="header-section-number">9.3.1</span> What is tidy data?<a href="in-class-activity-using-tidyr-to-create-tidy-data.html#what-is-tidy-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>You can represent the same underlying data many ways.
-Download the two messy grade data sets from blackboard.</p>
-<p><strong>Challenge problem:</strong> Load messy_grades_1.csv into R:</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="in-class-activity-using-tidyr-to-create-tidy-data.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
-<p><strong>Challenge problem:</strong> Load messy_grades_2.csv into R:</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="in-class-activity-using-tidyr-to-create-tidy-data.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
-<p><strong>Challenge questions:</strong></p>
-<ul>
-<li>Why are these data sets (messy_grades_1 and messy_grades_2) not tidy?</li>
-<li>Sketch out a new way to format the grade data that is tidy.</li>
-<li>Which tidyr function can you use to reformat the messy grade data? (look through the tidyr functions documentation linked above)</li>
-</ul>
-</div>
-<div id="making-data-tidy" class="section level3 hasAnchor" number="9.3.2">
-<h3><span class="header-section-number">9.3.2</span> Making data tidy<a href="in-class-activity-using-tidyr-to-create-tidy-data.html#making-data-tidy" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><strong>Challenge problem:</strong> Use the function you identified previously to create reformat the grade data into a tidy format:</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="in-class-activity-using-tidyr-to-create-tidy-data.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
-</div>
-</div>
-<div id="messy-temperature-data" class="section level2 hasAnchor" number="9.4">
-<h2><span class="header-section-number">9.4</span> Messy temperature data<a href="in-class-activity-using-tidyr-to-create-tidy-data.html#messy-temperature-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Challenge problem:</strong> Load the messy temperatures data into R:</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="in-class-activity-using-tidyr-to-create-tidy-data.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
-<p><strong>Challenge questions:</strong></p>
-<ul>
-<li>Why is this temperature data set messy?</li>
-<li>Sketch out a new way to format the temperature data so that it is tidy.</li>
-<li>Which tidyr function can you use to help you reformat the messy temperature data?</li>
-</ul>
-<p><strong>Challenge problem</strong>: Use the function you identified to reformat the temperature data into a tidy format.</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="in-class-activity-using-tidyr-to-create-tidy-data.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="in-class-activity-using-dplyr-to-manipulate-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="homework-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="homework-3.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="in-class-activity-visualizing-data-with-ggplot.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -412,7 +348,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/amlalejini/gvsu-cis331-2023w/tree/main/lecture-material/week-03/in-class-tidyr.Rmd",
+"link": "https://github.com/amlalejini/gvsu-cis331-2023w/tree/main/lecture-material/week-04/week-04.md",
 "text": "Edit"
 },
 "history": {

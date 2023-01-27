@@ -71,3 +71,12 @@ part-d.-subsetting-vectors
 part-e.-types-of-data
 part-f.-control-flow
 part-g.-tidyverse
+week-04---overview
+in-class-activity-visualizing-data-with-ggplot
+overview-5
+goals-2
+sources-2
+setup-3
+making-a-boxplot
+making-a-line-graph
+making-a-bar-plot
