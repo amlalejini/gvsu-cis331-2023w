@@ -56,7 +56,7 @@ age_data <- data.frame(
 
 1. What is the mean, median, and mode of the ages given by the `age` attribute of `age_data`?
 
-2. Use min-max normalization to transform the age values onto the range [0.0,1.0].;
+2. Use min-max normalization to transform the age values onto the range [0.0,1.0].
    Print out the result.
 
 3. Using the original `age` data, what is the Z-score normalized values for the following ages:
