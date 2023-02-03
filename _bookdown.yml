@@ -16,5 +16,7 @@ rmd_files: [
   "homework/homework-03/homework-03.Rmd",
   "lecture-material/week-04/week-04.md",
   "lecture-material/week-04/in-class-ggplot.Rmd",
+  "lecture-material/week-05/week-05.md",
+  "homework/homework-04/homework-04.Rmd",
   "tail.Rmd"
 ]

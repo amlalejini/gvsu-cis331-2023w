@@ -80,3 +80,12 @@ setup-3
 making-a-boxplot
 making-a-line-graph
 making-a-bar-plot
+week-05---overview
+homework-4
+overview-6
+objectives-2
+grading-3
+deliverables-3
+setup-4
+part-a---calculating-basic-statistics
+part-b---processing-customer-data
