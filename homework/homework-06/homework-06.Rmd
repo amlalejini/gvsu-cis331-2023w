@@ -1,0 +1,94 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+
+# Homework 6
+
+## Overview
+
+This assignment may be completed with your group.
+Each group will submit one copy of their homework responses to blackboard.
+
+You will turn in both the .Rmd file and the knitted .pdf file to blackboard.
+I have provided a template R markdown file for you to use (on blackboard).
+
+### Objectives
+
+The goal of this homework is as follows:
+
+- Identify a data set appropriate for performing classification
+- Use R to split your data into a training and testing set
+- Train a decision tree classifier and evaluate your model's performance
+
+### Grading
+
+- Upload _all_ requested files, 5%
+- Files are properly/clearly formatted, 5%
+  - Proper section headers for each part of your homework.
+  - You clearly indicate which question each of your responses are associated with.
+- All questions (weighted evenly), 90%
+
+For full credit, your code must run.
+
+### Deliverables
+
+- .Rmd file used to knit your .pdf file
+- .pdf file knitted from your R markdown file
+
+I strongly recommend that you read over your knitted .pdf file before submitting your homework to make sure that it is formatted as you expect.
+
+## Setup
+
+Download the R markdown template provided to you (on blackboard), and answer all of the questions below.
+The template is meant to help you organize/format your responses.
+You will need to add explanatory text and code chunks as necessary (be sure to update your names!).
+
+## Evaluating a classifier using a testing set
+
+For this assignment, you will select a publically available dataset that you find interesting.
+You will be training a decision tree classifier on the data, so you need to make sure that you can identify a categorical variable to predict and a set of predictor attributes.
+
+Possible sources for data sets:
+
+- [CORGIS datasets](https://think.cs.vt.edu/corgis/csv/)
+- [awesome-public-datasets - curated list of datasets by topic](https://github.com/awesomedata/awesome-public-datasets/blob/master/README.rst)
+
+Recall the examples we worked on previously in which we split a dataset into a training set and testing set and then trained and evaluated a decision tree classifier.
+Those examples will be very helpful for this homework assignment.
+
+I will not grade your assignment based on the _accuracy_ of your model.
+It is okay if your model isn't very accurate (you should speculate as to why in your assessment).
+
+1. Choose a dataset.
+   I recommend choosing a dataset that is already a well-formatted .csv file.
+   For credit, provide a working link to the dataset and the author(s) of the dataset.
+
+2. What attribute do you plan to predict in your dataset?
+
+3. What attributes do you plan to use as predictor attributes in your dataset?
+
+4. Load the dataset into R.
+
+5. Split the data into a training and testing set.
+   Your training and testing sets must be non-overlapping.
+   I recommend referring to examples posted on Blackboard.
+
+6. Use the `rpart` package in R to train a decision tree classifier on the training set.
+
+7. Visualize the decision tree that you trained (using `rpart.plot`).
+
+8. Calculate your model's accuracy on the training set (i.e., the number correct predictions divided by the total size of the training set).
+
+9. Calculate your model's accuracy on the testing set.
+
+10. Assess the performance of your model based on your model's training and testing accuracy.
+    Do you think your model overfit the training data? Why or why not?
+    If so, what could you do to prevent overfitting?
+    For full credit, your assessment should be approximately 3 - 5 (complete) sentences.
+
+
+
+
+

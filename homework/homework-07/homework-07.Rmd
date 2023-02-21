@@ -1,0 +1,176 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+
+# Homework 7
+
+## Overview
+
+This assignment may be completed with your group.
+Each group will submit one copy of their homework responses to blackboard.
+
+You will turn in both the .Rmd file and the knitted .pdf file to blackboard.
+I have provided a template R markdown file for you to use (on blackboard).
+
+### Objectives
+
+The goal of this homework is as follows:
+
+- Apply K-means clustering using R
+- Interpret the resulting clusters
+
+### Grading
+
+- Uploaded _all_ requested files, 5%
+- Files are properly/clearly formatted, 5%
+  - Proper section headers for each part of your homework.
+  - You clearly indicate which question each of your responses are associated with.
+- Part A: 10%
+- Part B: 40%
+- Part C: 40%
+
+### Deliverables
+
+- .Rmd file used to knit your .pdf file
+- .pdf file knitted from your .Rmd file
+
+I strongly recommend that you read over your knitted .pdf file before submitting your homework to make sure that it is formatted as you expect.
+
+## Setup
+
+Download the R markdown template provided to you (on blackboard) and answer the questions below.
+The template is meant to help you organize/format your responses.
+You will need to add explanatory text and code chunks as necessary (be sure to update your names).
+
+For this part of the assignment, you will need to use the following R packages:
+
+- `tidyverse`
+
+You may need to install them if you have not already.
+
+## Part A - About K-means clustering
+
+The questions in Part A do not require code.
+For each, your answer should be 1 - 3 complete sentences that address the question.
+
+### 1. What is "K" in K-means clustering?
+
+### 2. What is a cluster centroid and what does it represent?
+
+### 3. Pick and explain one a strategy for choosing a good value for K when performing K-means clustering.
+
+## Part B - Pre-processing
+
+In this assignment, you will use the K-means clustering technique to find groupings of NBA teams based on some of their per-game statistics from the 2021-2022 NBA season.
+The dataset provided for this assignment was created using the `nbastatR` package (you do not need this package to complete this assignment, as I am providing the data for you).
+Each row in the dataset gives per-game summary statistics for a particular team during the 2021-2022 NBA season.
+The attributes in the provided dataset are as follows:
+
+- `nameTeam` - Full team name (city name + team name)
+- `cityTeam` - City associated with the team
+- `teamName` - Team name
+- `slugSeason` - Season
+- `gp` - Number of regular season games played
+- `wins` - Number of regular season games won
+- `losses` - Number of regular season games lost
+- `pctWins` - Percentage of regular season games won
+- `rankConference` - Team's conference rank
+- `rankDivision` - Team's division rank
+- `countWinsPlayoffs` - Number of playoff games won
+- `countLossesPlayoffs` - Number of playoff games lost
+- `fgm` - number of field goals made (per game)
+- `fga` - number of field goals attempted (per game)
+- `pctFG` - percentage of field goals made (per game)
+- `fg3m` - number of 3-point field goals made (per game)
+- `fg3a` - number of 3-point field goals attempted (per game)
+- `pctFG3` - percentage of 3-point field goals made (per game)
+- `ftm` - number of free throws made (per game)
+- `fta` - number of free throws attempted (per game)
+- `pctFT` - percentage of free throws made (per game)
+- `oreb` - number of offensive rebounds (per game)
+- `dreb` - number of defensive rebounds (per game)
+- `treb` - total number of rebounds (per game)
+- `ast` - number of assists (per game)
+- `pf` - number of personal fouls (per game)
+- `stl` - number of steals (per game)
+- `tov` - number of turnovers (per game)
+- `blk` - number of blocks (per game)
+- `pts` - number of points scored (per game)
+- `ptsRank` - points scored ranking among teams
+- `isConferenceChampion` - binary value specifying whether team was a conference champion
+- `isNBAChampion` - value specifying whether team was the NBA champion
+
+Don't worry! You don't need to know anything about basketball to do this assignment!
+
+### 1. Load the dataset
+
+Download and load the dataset provided on blackboard (`nba_team_data.csv`) as a data frame.
+Use the `head` function to display a preview of the data frame you just loaded.
+
+### 2. Selecting attributes to cluster on
+
+When we apply K-means clustering, we need to think about which attributes we want to use to create the clusters.
+That is, which attributes do we want to use to determine how teams are grouped together.
+For this homework assignment, you'll use the following attributes for clustering: We'll use `oreb`, `dreb`, `ast`, `pf`, `stl`, `tov`, `blk`, and `pts`.
+
+Use the `select` function (from the tidyverse) to create a new data frame called `cluster_data` that contains only the following attributes for each team in the original dataset:
+
+- `teamName`
+- `oreb`
+- `dreb`
+- `ast`
+- `pf`
+- `stl`
+- `tov`
+- `blk`
+- `pts`
+
+### 3. Label your rows
+
+When using the built-in `kmeans` function in R, it is useful to give each row of your data a name.
+For this assignment, we're going to use the team names as row names.
+
+For this question, use the `column_to_rownames` function to name the rows in the `cluster_data` data frame you created in the previous question.
+Documentation for the `column_to_rownames` function can be found here: <https://tibble.tidyverse.org/reference/rownames.html>.
+
+Show that you correctly named the rows by printing `head(cluster_data)`.
+
+### 4. Normalize your attributes
+
+When you use k-means clustering, it's often important that you normalize the attributes you plan to use.
+Apply a **max-min normalization** to each of the following columns (set the new max to be 1 and the new min to be 1): `oreb`, `dreb`, `ast`, `pf`, `stl`, `tov`, `blk`, and `pts`.
+Reminder: we discussed max-min normalization in class when we covered data preprocessing.
+
+For full credit on this question, display the results of running `summary(cluster_data)` after you apply the max-min normalization to each column.
+The summary should show that the minimum values of each column are now 0 and the maximum values are now 1.
+
+## Part C - Run K-means
+
+### 1. Apply K-means
+
+Use the `kmeans` function to apply K-means clustering with `K=5`.
+Remember, you can use `?kmeans` to see how to use the `kmeans` function.
+Be sure to save the results of the `kmeans` function as a variable.
+
+### 2. Cluster sizes
+
+Display the size of each of the clusters found in the previous question.
+
+### 3. Cluster centroids
+
+What are the centroids of your clusters?
+Each centroid should have the following attributes: `oreb`, `dreb`, `ast`, `pf`, `stl`, `tov`, `blk`, and `pts`.
+
+### 4. Within-cluster variation
+
+Print the within-cluster variation for each cluster (abbreviated `withinss` in the kmeans results).
+What is the cluster with the highest within-cluster variation?
+
+### 5. Cluster descriptions
+
+Look at the centroids for each cluster.
+Based on the centroids, describe each of the 5 clusters in your own words.
+For example, what statistics do teams in a given cluster generally perform well/poorly on?
+
